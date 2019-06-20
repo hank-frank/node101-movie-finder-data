@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "my-express-project",
+    "builds": [
+      { "src": "www/**/*", "use": "@now/static" },
+      { "src": "./index.js", "use": "@now/node" }
+    ]  
+  }
