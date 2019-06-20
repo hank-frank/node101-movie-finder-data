@@ -30,8 +30,8 @@ app.get('/', function(req, res){
         axios.get(url)         //use axios to handle the get request to the url constructed above which will be holding the correct
         //values for each test that is passing in the info. 
             .then(response => { //following the get, .then is calling an annonymous funciton called response that is doing: 
-            holdingObj[val] =  response.data; //setting the value in the cache obj to the response.data content, which is the value half of the key/val pair stored
-            // in the 
+            holdingObj[val] =  response.data; //setting the value in the holdingObj obj to the response.data content, which is the value half of the key/val pair stored
+            // in the object
             res.send(holdingObj[val]);  //sent that data(the value half of the key/val pair) back as the response to the whole req. 
             }).catch(err => res.json(err.message)); //if theres an error throw this.
     }//closing else
