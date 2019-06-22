@@ -1,8 +1,10 @@
 {
-    "version": 2,
-    "name": "my-express-project",
-    "builds": [
-      { "src": "www/**/*", "use": "@now/static" },
-      { "src": "./index.js", "use": "@now/node" }
-    ]  
-  }
+  "version": 2,
+  "routes": [
+    { "src": "/(.*)", "dest": "/server/index.js" }
+  ],
+  "builds": [
+    { "src": "server/index.js", "use": "@now/node-server" },
+    { "src": "public/**", "use": "@now/static" }
+  ]
+ }
