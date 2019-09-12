@@ -4,7 +4,6 @@ const axios = require('axios');
 const mockAdapter = require('axios-mock-adapter');
 const app = require('../server/app');
 
-// Connect mock adapter
 const mock = new mockAdapter(axios);
 const movieData = [
   { "Title": "Guardians of the Galaxy Vol. 2", "Year": "2017" },
@@ -26,7 +25,6 @@ function withMovie(i) {
     return [500];
   }
 }
-
 
 mock
   .onGet('http://www.omdbapi.com', { params: { i: 'tt3896198', apiKey: '8730e0e' }})
